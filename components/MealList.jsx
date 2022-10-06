@@ -12,11 +12,9 @@ const MealList = (props) => {
         title={itemData.item.title}
         affordability={itemData.item.affordability.toUpperCase()}
         onSelectMeal={() => {
-          props.navigation.navigate({
-            routeName: "MealDetail",
-            params: {
-              mealId: itemData.item.id,
-            },
+          props.navigation.navigate("MealDetail", {
+            mealId: itemData.item.id,
+            mealTitle: itemData.item.title,
           });
         }}
       />

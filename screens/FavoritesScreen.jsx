@@ -7,7 +7,3 @@ const FavoritesScreen = (props) => {
 };
 
 export default FavoritesScreen;
-
-FavoritesScreen.navigationOptions = {
-  headerTitle: "Your Favorites",
-};

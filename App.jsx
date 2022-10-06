@@ -2,9 +2,12 @@ import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import { useState } from "react";
-import MealsNavigator from "./navigation/MealsNavigator";
-import { enableScreens } from "react-native-screens";
 
+import { enableScreens } from "react-native-screens";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
+import { BottomTabNavigator } from "./navigation/BottomTabNavigator";
+import { DrawerNavigator } from "./navigation/DrawerNavigator";
 enableScreens();
 const fetchFonts = () => {
   Font.loadAsync({
@@ -24,7 +27,15 @@ export default function App() {
       />
     );
   }
-  return <MealsNavigator />;
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        {/* <NativeStack /> */}
+        <BottomTabNavigator />
+        {/* <DrawerNavigator /> */}
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 }
 
 const styles = StyleSheet.create({
