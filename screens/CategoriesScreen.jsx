@@ -6,8 +6,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { useEffect } from "react";
 import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import HeaderButton from "../components/HeaderButton";
 
 const CategoriesScreen = (props) => {
   const renderGridItem = (itemData) => {
@@ -24,6 +27,28 @@ const CategoriesScreen = (props) => {
       />
     );
   };
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerLeft: () => (
+        <HeaderButtons HeaderButtonComponent={HeaderButton}>
+          <Item
+            title="Menu"
+            iconName="ios-menu"
+            onPress={() => {
+              props.navigation.toggleDrawer();
+            }}
+          />
+          {/* <Item
+            title="Fav"
+            iconName="ios-star-outline"
+            onPress={() => {
+              console.log("Mark as favorite!");
+            }}
+          /> */}
+        </HeaderButtons>
+      ),
+    });
+  }, [props.navigation]);
   return (
     <FlatList
       keyExtractor={(item, index) => item.id}

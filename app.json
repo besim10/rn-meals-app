@@ -1,22 +1,21 @@
 {
   "expo": {
-    "name": "rn-meals-app",
-    "slug": "rn-meals-app",
+    "name": "Meals App",
+    "slug": "meals-app",
     "version": "1.0.0",
+    "description": "This is a practice meals app",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/react-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/react-splash-screen.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

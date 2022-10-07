@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import FavoritesScreen from "../screens/FavoritesScreen";
+import { Text } from "react-native";
 import CategoriesScreen from "../screens/CategoriesScreen";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import Colors from "../constans/Colors";
@@ -12,6 +13,10 @@ export const BottomTabNavigator = () => {
   const IosBottombar = (
     <Tab.Navigator
       screenOptions={{
+        tabBarLabelStyle: {
+          fontFamily: "open-sans",
+        },
+
         tabBarActiveTintColor: Colors.accentColor,
         tabBarInactiveTintColor: "gray",
         headerShown: false,
@@ -58,6 +63,9 @@ export const BottomTabNavigator = () => {
             <Ionicons name="ios-restaurant" size={25} color={color} />
           ),
           tabBarColor: Colors.primaryColor,
+          tabBarLabel: (
+            <Text style={{ fontFamily: "open-sans-bold" }}>Meals</Text>
+          ),
         }}
       />
       <androidTab.Screen
@@ -69,6 +77,9 @@ export const BottomTabNavigator = () => {
             <Ionicons name="ios-star" size={25} color={color} />
           ),
           tabBarColor: Colors.accentColor,
+          tabBarLabel: (
+            <Text style={{ fontFamily: "open-sans-bold" }}>Favorites</Text>
+          ),
         }}
       />
     </androidTab.Navigator>

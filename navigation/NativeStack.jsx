@@ -5,46 +5,11 @@ import { Platform } from "react-native";
 import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryMealsScreen from "../screens/CategoryMealsScreen";
 import MealDetailScreen from "../screens/MealDetailScreen";
-// import FavoritesScreen from "../screens/FavoritesScreen";
+
 import Colors from "../constans/Colors";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-// const MealsNavigator = createStackNavigator(
-//   {
-//     Categories: {
-//       screen: CategoriesScreen,
-//     },
-//     CategoryMeals: {
-//       screen: CategoryMealsScreen,
-//     },
-//     MealDetail: MealDetailScreen,
-//   },
-//   {
-//     // initialRouteName: 'Categories',
-//     defaultNavigationOptions: {
-//       headerStyle: {
-//         backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "",
-//       },
-//       headerTintColor:
-//         Platform.OS === "android" ? "white" : Colors.primaryColor,
-//       headerTitle: "A Screen",
-//     },
-//   }
-// );
-// const Tab = createBottomTabNavigator();
-// function MyTabs() {
-//   return (
-//     <Tab.Navigator>
-//       <Tab.Screen name="Home" component={FavoritesScreen} />
-//     </Tab.Navigator>
-//   );
-// }
-// const MealsFavTabNavigator = createStackNavigator({
-//   Meals: MealsNavigator,
-//   Favorites: MyTabs(),
-// });
-// export default createAppContainer(MealsFavTabNavigator);
 const Stack = createNativeStackNavigator();
 
 export const NativeStack = () => {
@@ -54,6 +19,10 @@ export const NativeStack = () => {
         headerStyle: {
           backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "",
         },
+        headerTitleStyle: {
+          fontFamily: "open-sans-bold",
+        },
+        headerBackTitleStyle: { fontFamily: "open-sans" },
         headerTintColor:
           Platform.OS === "android" ? "white" : Colors.primaryColor,
       }}

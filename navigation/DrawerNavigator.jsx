@@ -1,12 +1,27 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { BottomTabNavigator } from "./BottomTabNavigator";
 import { FiltersNavigator } from "./FiltersNavigator";
-const DrawerStack = createDrawerNavigator();
+import { View, Button } from "react-native";
+const Drawer = createDrawerNavigator();
+import Colors from "../constans/Colors";
 export const DrawerNavigator = () => {
   return (
-    <DrawerStack.Navigator>
-      <DrawerStack.Screen name="BtNavigator" component={BottomTabNavigator} />
-      <DrawerStack.Screen name="Filters" component={FiltersNavigator} />
-    </DrawerStack.Navigator>
+    <Drawer.Navigator
+      screenOptions={{
+        headerShown: false,
+        drawerActiveTintColor: Colors.accentColor,
+        drawerInactiveTintColor: Colors.primaryColor,
+        drawerLabelStyle: {
+          fontFamily: "open-sans-bold",
+        },
+      }}
+    >
+      <Drawer.Screen
+        name="BtNavigator"
+        component={BottomTabNavigator}
+        options={{ drawerLabel: "Meals" }}
+      />
+      <Drawer.Screen name="Filters" component={FiltersNavigator} />
+    </Drawer.Navigator>
   );
 };
